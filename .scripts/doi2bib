@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo >> bibliography.bib;
+curl -s "https://api.crossref.org/works/$1/transform/application/x-bibtex" >> bibliography.bib;
+echo >> bibliography.bib;

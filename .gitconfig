@@ -1,0 +1,15 @@
+[user]
+	name = James
+	email = j4ln@posteo.net
+	signingKey = ""
+[commit]
+	gpgSign = false
+	template = ~/.gitmessage
+[tag]
+	forceSignAnnotated = false
+[core]
+	longpaths = true
+	autocrlf = input
+	editor = nvim
+[init]
+	defaultBranch = main
