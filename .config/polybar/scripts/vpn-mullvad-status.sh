@@ -12,5 +12,12 @@ case $1 in
 			echo "Off"
 		fi
 		;;
+	"toggle")
+		if [ "$(connection_status)" = "connected" ]; then
+			mullvad disconnect
+		else
+			mullvad connect
+		fi
+		;;
 	"reconnect") mullvad reconnect;;
 esac
