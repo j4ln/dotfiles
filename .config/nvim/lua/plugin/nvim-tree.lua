@@ -55,6 +55,11 @@ nvim_tree.setup {
 	diagnostics = {
 		enable = true,
 	},
+	filters = {
+		custom = {
+			"^\\.git$",
+		},
+	},
 	actions = {
 		open_file = {
 			resize_window = true,
