@@ -36,6 +36,13 @@ return packer.startup(function(use)
 	use 'windwp/nvim-autopairs'		-- Autopairs
 	use 'akinsho/toggleterm.nvim'	-- Toggle terminal
 
+	-- Markdown preview
+	use {
+		'iamcco/markdown-preview.nvim',
+		run = 'cd app && npm install',
+		ft = 'markdown'
+	}
+
 	-- Buffers
 	use {
 		'akinsho/bufferline.nvim',	-- Bufferline
