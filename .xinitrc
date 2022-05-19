@@ -1,6 +1,9 @@
 export QT_QPA_PLATFORMTHEME=qt5ct
 export WINIT_X11_SCALE_FACTOR=1	alacritty
 
+# Fix Java applications under bspwm
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Fcitx IMF
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
