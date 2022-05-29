@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# requires git, and rsync
+rm --recursive $HOME/.dotfiles
+
+# install dot repo
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:umimaso/dotfiles.git $HOME/.dotfiles-tmp
+rsync --recursive --verbose --exclude '.git' $HOME/.dotfiles-tmp/ $HOME/
+rm --recursive $HOME/.dotfiles-tmp
+
+# git config
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles config status.showUntrackedFiles no
