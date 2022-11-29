@@ -31,28 +31,24 @@ packer.init {
 
 -- Use packer
 return packer.startup(function(use)
-	-- General
-	use 'wbthomason/packer.nvim'	-- Packer itself
-	use 'windwp/nvim-autopairs'		-- Autopairs
-	use 'akinsho/toggleterm.nvim'	-- Toggle terminal
+	use 'wbthomason/packer.nvim'
+	use 'windwp/nvim-autopairs'
+	use 'akinsho/toggleterm.nvim'
 
-	-- Markdown preview
 	use {
 		'iamcco/markdown-preview.nvim',
 		run = 'cd app && npm install',
 		ft = 'markdown'
 	}
 
-	-- Buffers
 	use {
-		'akinsho/bufferline.nvim',	-- Bufferline
+		'akinsho/bufferline.nvim',
 		requires = {
 			'kyazdani42/nvim-web-devicons'
 		}
 	}
-	use 'moll/vim-bbye'				-- Buffer bye
+	use 'moll/vim-bbye'
 
-	-- Nvimtree
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = {
@@ -60,7 +56,6 @@ return packer.startup(function(use)
 		}
 	}
 
-	-- Telescope
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {
@@ -69,23 +64,21 @@ return packer.startup(function(use)
 	}
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-	-- Treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
 
-	-- LSP
-	use 'neovim/nvim-lspconfig'		-- LSP config
-	use 'williamboman/nvim-lsp-installer' -- Language server installer
+	use 'neovim/nvim-lspconfig'
+	use 'williamboman/nvim-lsp-installer'
 
 	-- cmp
-	use 'hrsh7th/nvim-cmp'			-- Auto complete
-	use 'hrsh7th/cmp-buffer'		-- Buffer completion
-	use 'hrsh7th/cmp-path'			-- Path completion
-	use 'hrsh7th/cmp-cmdline'		-- Command completion
-	use 'hrsh7th/cmp-nvim-lsp'		-- LSP completion
-	use 'L3MON4D3/LuaSnip'			-- Snippet engine
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'L3MON4D3/LuaSnip'
 
 	-- Automatically setup configuration after inital install
 	if PACKER_BOOTSTRAP then
