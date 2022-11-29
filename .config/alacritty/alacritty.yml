@@ -1,6 +1,11 @@
 env:
   TERM: xterm-256color
 
+font:
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+
 window:
   opacity: 0.8
   padding:
