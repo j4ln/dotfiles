@@ -6,6 +6,9 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Restart authentication agent for polkit
 pgrep -x lxqt-policykit- > /dev/null || lxqt-policykit-agent &
 
+# Restart unclutter for auto hiding cursor when usused
+pgrep -x unclutter > /dev/null || unclutter &
+
 # Disable mouse acceleration on all pointer devices
 for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done &
 
@@ -54,7 +57,6 @@ picom --experimental-backends &	# Compositor
 dunst &				# Notification daemon
 fcitx &				# Input method framework
 ~/.config/polybar/launch.sh &	# Polybar
-unclutter &			# Auto hide cursor when unused
 ~/.fehbg & # Wallpaper restore
 
 # Set default cursor to left pointer
