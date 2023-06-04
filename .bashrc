@@ -32,10 +32,6 @@ alias pi='nvim ~/.config/picom/picom.conf'
 alias po='nvim ~/.config/polybar/config.ini'
 alias ra='nvim ~/.config/ranger/rc.conf'
 alias ro='nvim ~/.config/rofi/config.rasi'
-alias mvs='mullvad status'
-alias mvc='mullvad connect'
-alias mvd='mullvad disconnect'
-alias mvr='mullvad reconnect'
 
 # bare dotfiles alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
