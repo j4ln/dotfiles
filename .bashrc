@@ -8,14 +8,17 @@
 # Command prefix - "~ $ "
 PS1="\W $ "
 
-# Add .scripts to path at the start, priority given over rest
-PATH="~/.scripts:${PATH}"
-
-# Add python user packages to path at start, priority given over rest
+# Add to the path
 PATH="~/.local/bin:${PATH}"
+PATH="~/.scripts:${PATH}"
+PATH="/opt/android-sdk/cmdline-tools/latest/bin:${PATH}"
 
 # Set editor to nvim
 EDITOR=nvim
+
+# History
+export HISTFILESIZE=
+export HISTSIZE=
 
 # Custom alias'
 alias lg='lazygit'
@@ -23,15 +26,10 @@ alias ls='ls --color=auto'
 alias nv='nvim'
 alias r='ranger'
 alias venv='. */bin/activate'
-alias c='clear'
 alias al='nvim ~/.config/alacritty/alacritty.yml'
 alias ba='nvim ~/.bashrc'
 alias bsp='nvim ~/.config/bspwm/bspwmrc'
 alias sx='nvim ~/.config/sxhkd/sxhkdrc'
-alias pi='nvim ~/.config/picom/picom.conf'
-alias po='nvim ~/.config/polybar/config.ini'
-alias ra='nvim ~/.config/ranger/rc.conf'
-alias ro='nvim ~/.config/rofi/config.rasi'
 
 # bare dotfiles alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
