@@ -20,9 +20,6 @@ elif [[ $(hostnamectl hostname) == 'arch' && $(hostnamectl chassis) == 'laptop' 
 	bspc monitor -d I II III IV V VI VII VIII IX X
 fi
 
-# source wal colors
-. "${HOME}/.cache/wal/colors.sh"
-
 # bspc global
 bspc config focus_follows_pointer true
 
@@ -57,9 +54,9 @@ mullvad connect &		# VPN
 picom --experimental-backends &	# Compositor
 dunst &				# Notification daemon
 fcitx &				# Input method framework
-wal -R &			# Wallpaper and colorscheme restore
 ~/.config/polybar/launch.sh &	# Polybar
 unclutter &			# Auto hide cursor when unused
+~/.fehbg & # Wallpaper restore
 
 # Set default cursor to left pointer
 # https://wiki.archlinux.org/index.php/Cursor_themes#Change_X_shaped_default_cursor

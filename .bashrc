@@ -40,13 +40,5 @@ alias mvr='mullvad reconnect'
 # bare dotfiles alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# wal: Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
-# wal: To add support for TTYs
-source ~/.cache/wal/colors-tty.sh
-
 # use nvm
 source /usr/share/nvm/init-nvm.sh
