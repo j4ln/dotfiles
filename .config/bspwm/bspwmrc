@@ -57,7 +57,7 @@ bspc rule -a Zathura state=tiled
 # Autostart
 picom --experimental-backends & # Compositor
 dunst & # Notification daemon
-fcitx & # Input method framework
+#fcitx & # Input method framework
 ~/.fehbg & # Wallpaper restore
 ~/.config/polybar/launch.sh & # Polybar
 
