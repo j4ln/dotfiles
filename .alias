@@ -1,0 +1,21 @@
+# shortcuts
+alias lg='lazygit'
+alias ls='ls --color=auto'
+alias vi='vim'
+alias nv='nvim'
+alias r='ranger'
+alias venv='. */bin/activate'
+
+# dotfiles
+alias zdot='cd $ZDOTDIR'
+alias bsp='nvim ~/.config/bspwm/bspwmrc'
+alias sx='nvim ~/.config/sxhkd/sxhkdrc'
+
+# bare dotfiles alias
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# url encode/decode
+alias urldecode='python3 -c "import sys, urllib.parse as ul; \
+    print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; \
+    print (ul.quote_plus(sys.argv[1]))"'
