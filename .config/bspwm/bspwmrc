@@ -15,7 +15,7 @@ for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinpu
 # Display configuration and bspc workspace, dependent on device
 if [[ $(hostnamectl hostname) == 'arch' && $(hostnamectl chassis) == 'desktop' ]]; then
 	xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 144 &
-	xrandr --output DP-3 --right-of HDMI-0 --mode 1920x1080 --rate 60 &
+	xrandr --output DP-3 --right-of HDMI-0 --mode 1920x1080 --rate 60 --rotate left &
 	bspc monitor HDMI-0 -d I II III IV V
 	bspc monitor DP-3 -d VI VII VIII IX X
 elif [[ $(hostnamectl hostname) == 'arch' && $(hostnamectl chassis) == 'laptop' ]]; then
