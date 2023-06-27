@@ -3,33 +3,30 @@ if not status_ok then
 	return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, 'nvim-tree.config')
-if not config_status_ok then
+local api_status_ok, api = pcall(require, 'nvim-tree.api')
+if not api_status_ok then
 	return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+local function on_attach(bufnr)
+	local function opts(desc)
+		return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+	api.config.mappings.default_on_attach(bufnr)
+	vim.keymap.set('n', '<S-v>', api.node.open.horizontal, opts('Open: Horizontal Split'))
+	vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
+end
 
 nvim_tree.setup {
 	disable_netrw = true,
 	hijack_netrw = true,
 	update_cwd = true,
-	view = {
-	mappings = {
-		custom_only = false,
-			list = {
-				{ key = "<S-v>", cb = tree_cb "split"},
-				{ key = "v", cb = tree_cb "vsplit" },
-			},
-		},
-	},
+	on_attach = on_attach,
 	update_focused_file = {
 		enable = true,
 		update_cwd = true,
 		ignore_list = {},
-	},
-	ignore_ft_on_setup = {
-		"alpha",
 	},
 	diagnostics = {
 		enable = true,
