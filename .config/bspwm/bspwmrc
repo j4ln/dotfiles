@@ -13,13 +13,10 @@ pgrep -x unclutter > /dev/null || unclutter &
 for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done &
 
 # Display configuration and bspc workspace, dependent on device
-if [[ $(hostnamectl hostname) == 'arch' && $(hostnamectl chassis) == 'desktop' ]]; then
-	xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 144 &
-	xrandr --output DP-3 --right-of HDMI-0 --mode 1920x1080 --rate 60 --rotate left &
+if [[ $(hostnamectl chassis) == 'desktop' ]]; then
 	bspc monitor HDMI-0 -d I II III IV V
 	bspc monitor DP-3 -d VI VII VIII IX X
-elif [[ $(hostnamectl hostname) == 'arch' && $(hostnamectl chassis) == 'laptop' ]]; then
-	xrandr --output eDP1 --primary --mode 1920x1080 --rate 60 &
+elif [[ $(hostnamectl chassis) == 'laptop' ]]; then
 	bspc monitor -d I II III IV V VI VII VIII IX X
 fi
 
