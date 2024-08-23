@@ -30,3 +30,7 @@ source /usr/share/nvm/init-nvm.sh
 # antidote plugin management
 source /usr/share/zsh-antidote/antidote.zsh
 antidote load "$ZDOTDIR/.zplugins"
+
+# fzf auto completion and key bindings
+source "/usr/share/fzf/completion.zsh"
+source "/usr/share/fzf/key-bindings.zsh"

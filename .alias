@@ -13,6 +13,7 @@ alias sx='nvim ~/.config/sxhkd/sxhkdrc'
 
 # bare dotfiles alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lgdf='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # url encode/decode
 alias urldecode='python3 -c "import sys, urllib.parse as ul; \
