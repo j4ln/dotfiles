@@ -1,5 +1,5 @@
+# QT Theme
 export QT_QPA_PLATFORMTHEME=qt5ct
-export WINIT_X11_SCALE_FACTOR=1	alacritty
 
 # Fix Java applications under bspwm
 export _JAVA_AWT_WM_NONREPARENTING=1

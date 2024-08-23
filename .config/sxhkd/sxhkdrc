@@ -1,7 +1,7 @@
 # custom keybinds
 # Terminal
 super + Return
-	alacritty
+	kitty
 # Program launcher
 super + space
 	rofi -show drun
